@@ -1,0 +1,57 @@
+Name: Narendra Yenumula
+Title: Data Analyst | BI | SQL | Financial Analytics
+Location: Boca Raton, Florida
+
+SUMMARY
+Data Analyst with 3+ years of experience working with financial, operational, and healthcare datasets using SQL, Python, Power BI, Tableau, and SAP (S/4HANA, ECC, BW/4HANA).
+
+EXPERIENCE
+
+Discover Financial Services (Mar 2025 – Present)
+Role: Data Analyst
+- Work with large transactional datasets using SQL and Python
+- Build Power BI dashboards for credit performance and spending trends
+- Extract data from SAP S/4HANA and SAP ECC
+- Automate reporting using Python and Power Automate
+- Support finance and risk teams
+
+VR Digital Solutions (Jan 2022 – Jul 2023)
+Role: Data Analyst
+- Analyze datasets up to 2M records using SQL, Excel, Python
+- Build dashboards in Power BI and Tableau
+- Perform marketing and operational analytics
+- Automate reporting with Python and Excel macros
+
+VR Digital Solutions (Jul 2021 – Dec 2021)
+Role: Data Analyst Intern
+- Data cleaning and preprocessing
+- Build dashboards in Power BI
+- Perform exploratory data analysis
+
+PROJECTS
+
+Business Performance Analytics Dashboard
+- Built dashboards using SQL, Power BI, Excel
+- Track operational KPIs and revenue trends
+
+Customer Behavior & Retention Analysis
+- Analyzed customer behavior using Python and SQL
+- Created Tableau and Power BI dashboards
+
+SKILLS
+
+Data Analysis
+SQL, Python, Pandas, NumPy, R, EDA
+
+BI & Visualization
+Power BI, Tableau, Excel, SAP Analytics Cloud
+
+SAP
+SAP S/4HANA, SAP ECC, SAP BW/4HANA, SAP HANA
+
+Data Engineering
+ETL, Snowflake, SQL Server, Python Automation
+
+Education
+MS Data Science & Analytics
+Florida Atlantic University (2025)

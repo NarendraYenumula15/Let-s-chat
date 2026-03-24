@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chat With Narendra Resume</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="chat-container">
+
+<div class="chat-header">
+💬 Let's talk with Narendra's AI Resume Assistant
+</div>
+
+<div id="chat-box" class="chatbox"></div>
+
+<div class="suggestions">
+
+<button onclick="sendMessage('Tell me about yourself ?')">
+Tell me about yourself
+</button>
+
+<button onclick="sendMessage('What are Narendra key strengths?')">
+Key Strengths
+</button>
+
+<button onclick="sendMessage('What tools does Narendra use?')">
+Tools
+</button>
+
+<button onclick="sendMessage('Tell me about Narendra experience')">
+Experience
+</button>
+
+<button onclick="sendMessage('What projects has Narendra worked on?')">
+Projects
+</button>
+
+</div>
+
+<div class="chat-input">
+
+<input 
+id="user-input"
+placeholder="Ask about skills, projects, experience..."
+/>
+
+<button onclick="sendMessage()">➤</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
