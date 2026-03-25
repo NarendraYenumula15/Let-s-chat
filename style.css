@@ -90,22 +90,24 @@ body {
   background: #0a3d4a;
 }
 
-/* Colorful Bubble Styles */
+/* Colorful Bubble Styles - NO AUTO SCROLL */
 .suggestions-wrapper {
   display: flex;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   height: 65px;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   background: white;
+  scroll-behavior: smooth;
 }
 
 .suggestions {
   display: flex;
   gap: 10px;
   padding: 8px 10px;
-  animation: slideRight 25s linear infinite;
-  will-change: transform;
+  /* REMOVED: animation: slideRight 25s linear infinite; */
+  will-change: auto;
 }
 
 .bubble {
@@ -181,15 +183,6 @@ body {
   background: linear-gradient(135deg, #30B0FE, #58E1A9);
 }
 
-@keyframes slideRight {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-100% - 80px));
-  }
-}
-
 /* Scrollbar Styling */
 .chatbox::-webkit-scrollbar {
   width: 6px;
@@ -206,6 +199,24 @@ body {
 
 .chatbox::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* Bubble container scrollbar styling */
+.suggestions-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.suggestions-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.suggestions-wrapper::-webkit-scrollbar-thumb {
+  background: #0e5a6a;
+  border-radius: 3px;
+}
+
+.suggestions-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #0a3d4a;
 }
 
 @media(max-width: 500px) {
