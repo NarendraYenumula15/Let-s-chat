@@ -1,120 +1,177 @@
-body{
-
-font-family: Arial;
-background:#eef2f7;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-margin:0;
-
+body {
+  font-family: Arial;
+  background: #eef2f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.chat-container{
-
-width:420px;
-height:600px;
-background:white;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-display:flex;
-flex-direction:column;
-overflow:hidden;
-
+.chat-container {
+  width: 420px;
+  height: 600px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.chat-header{
-
-background:#0f2940;
-color:white;
-padding:15px;
-font-weight:bold;
-
+.chat-header {
+  background: #0f2940;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
-.chatbox{
-
-flex:1;
-padding:15px;
-overflow-y:auto;
-
+.chatbox {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
 }
 
-.user-msg{
-
-background:#0e5a6a;
-color:white;
-padding:10px 14px;
-border-radius:12px;
-margin-bottom:10px;
-max-width:70%;
-margin-left:auto;
-
+.user-msg {
+  background: #0e5a6a;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  max-width: 70%;
+  margin-left: auto;
 }
 
-.bot-msg{
-
-background:#f1f3f6;
-padding:10px 14px;
-border-radius:12px;
-margin-bottom:10px;
-max-width:75%;
-
+.bot-msg {
+  background: #f1f3f6;
+  padding: 10px 14px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  max-width: 75%;
 }
 
-.chat-input{
-
-display:flex;
-border-top:1px solid #ddd;
-
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
 }
 
-.chat-input input{
-
-flex:1;
-padding:12px;
-border:none;
-outline:none;
-
+.chat-input input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
 }
 
-.chat-input button{
-
-background:#0e5a6a;
-color:white;
-border:none;
-padding:12px 16px;
-cursor:pointer;
-
+.chat-input button {
+  background: #0e5a6a;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.suggestions{
-
-display:flex;
-gap:10px;
-padding:10px;
-flex-wrap:wrap;
-
+/* Colorful Bubble Styles */
+.suggestions-wrapper {
+  display: flex;
+  overflow: hidden;
+  height: 70px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 
-.suggestions button{
-
-border:none;
-background:#f0f2f5;
-padding:6px 10px;
-border-radius:20px;
-cursor:pointer;
-font-size:12px;
-
+.suggestions {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  animation: slideRight 15s linear infinite;
+  will-change: transform;
 }
 
-@media(max-width:500px){
-
-.chat-container{
-
-width:100%;
-height:100%;
-
+.bubble {
+  min-width: 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  color: white;
+  font-weight: bold;
 }
 
+.bubble:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* Colorful Gradients for Each Bubble */
+.bubble-1 {
+  background: linear-gradient(135deg, #FF6B6B, #FF8E72);
+}
+
+.bubble-2 {
+  background: linear-gradient(135deg, #4ECDC4, #44A5C2);
+}
+
+.bubble-3 {
+  background: linear-gradient(135deg, #FFD93D, #FFA502);
+}
+
+.bubble-4 {
+  background: linear-gradient(135deg, #6BCB77, #4D96AA);
+}
+
+.bubble-5 {
+  background: linear-gradient(135deg, #A8E6CF, #56CCF2);
+}
+
+.bubble-6 {
+  background: linear-gradient(135deg, #FF6B9D, #C44569);
+}
+
+.bubble-7 {
+  background: linear-gradient(135deg, #667EEA, #764BA2);
+}
+
+.bubble-8 {
+  background: linear-gradient(135deg, #F093FB, #F5576C);
+}
+
+.bubble-9 {
+  background: linear-gradient(135deg, #4FACFE, #00F2FE);
+}
+
+.bubble-10 {
+  background: linear-gradient(135deg, #43E97B, #38F9D7);
+}
+
+.bubble-11 {
+  background: linear-gradient(135deg, #FA709A, #FEE140);
+}
+
+.bubble-12 {
+  background: linear-gradient(135deg, #30B0FE, #58E1A9);
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 32px));
+  }
+}
+
+@media(max-width: 500px) {
+  .chat-container {
+    width: 100%;
+    height: 100%;
+  }
 }
