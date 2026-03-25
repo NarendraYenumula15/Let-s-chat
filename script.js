@@ -1,10 +1,13 @@
 const chatBox = document.getElementById("chat-box");
 const input = document.getElementById("user-input");
 
+// Show welcome message when page loads
+window.addEventListener("DOMContentLoaded", function() {
+  addMessage("👋 Hi there! I'm glad you're here. Feel free to ask me anything — about my experience, skills, projects, or how I can add value to your team. I'm happy to chat!", "bot");
+});
+
 function addMessage(message, sender) {
-
   const msg = document.createElement("div");
-
   msg.className = sender === "user" ? "user-msg" : "bot-msg";
 
   // Bold **text**
@@ -17,14 +20,11 @@ function addMessage(message, sender) {
   message = message.replace(/\n/g, "<br>");
 
   msg.innerHTML = message;
-
   chatBox.appendChild(msg);
-
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 async function sendMessage(messageFromButton = null) {
-
   const message = messageFromButton || input.value.trim();
 
   if (!message) return;
@@ -36,7 +36,6 @@ async function sendMessage(messageFromButton = null) {
   }
 
   try {
-
     const response = await fetch("/.netlify/functions/chat", {
       method: "POST",
       headers: {
@@ -48,20 +47,15 @@ async function sendMessage(messageFromButton = null) {
     });
 
     const data = await response.json();
-
     addMessage(data.reply, "bot");
 
   } catch (error) {
-
     addMessage("Error connecting to AI.", "bot");
-
   }
 }
 
 input.addEventListener("keypress", function(e) {
-
   if (e.key === "Enter") {
     sendMessage();
   }
-
 });
