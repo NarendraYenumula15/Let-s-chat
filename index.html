@@ -2,14 +2,10 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Chat With Narendra Resume</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -22,39 +18,31 @@
 
 <div id="chat-box" class="chatbox"></div>
 
-<div class="suggestions">
+<div class="suggestions-wrapper">
+  <div class="suggestions">
 
-<button onclick="sendMessage('Tell me about yourself ?')">
-Tell me about yourself
-</button>
+    <button class="bubble bubble-1" onclick="sendMessage('Tell me about yourself ?')">📝</button>
+    <button class="bubble bubble-2" onclick="sendMessage('What are Narendra key strengths?')">⭐</button>
+    <button class="bubble bubble-3" onclick="sendMessage('What tools does Narendra use?')">🔧</button>
+    <button class="bubble bubble-4" onclick="sendMessage('Tell me about Narendra experience')">💼</button>
+    <button class="bubble bubble-5" onclick="sendMessage('What projects has Narendra worked on?')">🎯</button>
+    <button class="bubble bubble-6" onclick="sendMessage('What is Narendra technical skills?')">💻</button>
+    <button class="bubble bubble-7" onclick="sendMessage('Tell me about Narendra education')">🎓</button>
+    <button class="bubble bubble-8" onclick="sendMessage('What is Narendra work experience?')">👔</button>
+    <button class="bubble bubble-9" onclick="sendMessage('What achievements has Narendra accomplished?')">🏆</button>
+    <button class="bubble bubble-10" onclick="sendMessage('What are Narendra career goals?')">🚀</button>
+    <button class="bubble bubble-11" onclick="sendMessage('What certifications does Narendra have?')">📜</button>
+    <button class="bubble bubble-12" onclick="sendMessage('Tell me Narendra location and background')">🌍</button>
 
-<button onclick="sendMessage('What are Narendra key strengths?')">
-Key Strengths
-</button>
-
-<button onclick="sendMessage('What tools does Narendra use?')">
-Tools
-</button>
-
-<button onclick="sendMessage('Tell me about Narendra experience')">
-Experience
-</button>
-
-<button onclick="sendMessage('What projects has Narendra worked on?')">
-Projects
-</button>
-
+  </div>
 </div>
 
 <div class="chat-input">
-
 <input 
 id="user-input"
 placeholder="Ask about skills, projects, experience..."
 />
-
 <button onclick="sendMessage()">➤</button>
-
 </div>
 
 </div>
