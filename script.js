@@ -1,10 +1,70 @@
 const chatBox = document.getElementById("chat-box");
 const input = document.getElementById("user-input");
 
+// Resume data embedded
+const RESUME_DATA = `Name: Narendra Yenumula
+Title: Data Analyst | BI | SQL | Financial Analytics
+Location: Boca Raton, Florida
+
+SUMMARY
+Data Analyst with 3+ years of experience working with financial, operational, and healthcare datasets using SQL, Python, Power BI, Tableau, and SAP (S/4HANA, ECC, BW/4HANA).
+
+EXPERIENCE
+
+Discover Financial Services (Mar 2025 – Present)
+Role: Data Analyst
+- Work with large transactional datasets using SQL and Python
+- Build Power BI dashboards for credit performance and spending trends
+- Extract data from SAP S/4HANA and SAP ECC
+- Automate reporting using Python and Power Automate
+- Support finance and risk teams
+
+VR Digital Solutions (Jan 2022 – Jul 2023)
+Role: Data Analyst
+- Analyze datasets up to 2M records using SQL, Excel, Python
+- Build dashboards in Power BI and Tableau
+- Perform marketing and operational analytics
+- Automate reporting with Python and Excel macros
+
+VR Digital Solutions (Jul 2021 – Dec 2021)
+Role: Data Analyst Intern
+- Data cleaning and preprocessing
+- Build dashboards in Power BI
+- Perform exploratory data analysis
+
+PROJECTS
+
+Business Performance Analytics Dashboard
+- Built dashboards using SQL, Power BI, Excel
+- Track operational KPIs and revenue trends
+
+Customer Behavior & Retention Analysis
+- Analyzed customer behavior using Python and SQL
+- Created Tableau and Power BI dashboards
+
+SKILLS
+
+Data Analysis: SQL, Python, Pandas, NumPy, R, EDA
+BI & Visualization: Power BI, Tableau, Excel, SAP Analytics Cloud
+SAP: SAP S/4HANA, SAP ECC, SAP BW/4HANA, SAP HANA
+Data Engineering: ETL, Snowflake, SQL Server, Python Automation
+
+Education: MS Data Science & Analytics, Florida Atlantic University (2025)`;
+
 // Show welcome message when page loads
-window.addEventListener("DOMContentLoaded", function() {
-  addMessage("👋 Hi there! I'm glad you're here. Feel free to ask me anything — about my experience, skills, projects, or how I can add value to your team. I'm happy to chat!", "bot");
-});
+function showWelcome() {
+  if (chatBox && chatBox.children.length === 0) {
+    addMessage("👋 Hi there! I'm glad you're here. Feel free to ask me anything — about my experience, skills, projects, or how I can add value to your team. I'm happy to chat!", "bot");
+  }
+}
+
+// Try to show welcome message multiple ways
+setTimeout(showWelcome, 100);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', showWelcome);
+} else {
+  showWelcome();
+}
 
 function addMessage(message, sender) {
   const msg = document.createElement("div");
@@ -24,67 +84,60 @@ function addMessage(message, sender) {
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// Simple local AI response (rule-based - NO API CALLS)
-function generateResponse(userMessage) {
-  const message = userMessage.toLowerCase();
-  
-  // About yourself
-  if (message.includes("about yourself") || message.includes("tell me about you") || message.includes("who are you")) {
-    return "I'm Narendra Yenumula, a Data Analyst with 3+ years of experience in financial, operational, and healthcare analytics. I specialize in SQL, Python, Power BI, and Tableau. Currently working at Discover Financial Services, I build dashboards and automate reporting to drive business insights. I'm passionate about turning data into actionable intelligence!";
+// Call Groq AI API
+async function callGroqAI(userMessage) {
+  try {
+    // Check if API key is available
+    if (typeof GROQ_API_KEY === 'undefined' || !GROQ_API_KEY) {
+      console.error("GROQ_API_KEY is not defined. Make sure config.js is loaded.");
+      return "Sorry, the AI service is not configured. Please check the API key setup.";
+    }
+
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${GROQ_API_KEY}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "llama-3.1-8b-instant",
+        messages: [
+          {
+            role: "system",
+            content: `You are an AI assistant answering questions about Narendra Yenumula, a Data Analyst professional. Based on the resume below, answer recruiter and job-seeker questions professionally and concisely.
+
+RESUME:
+${RESUME_DATA}
+
+Guidelines:
+- Answer questions about skills, experience, projects, and background
+- Be professional and accurate
+- Keep responses concise (2-3 sentences typically)
+- Reference specific technologies and experiences from the resume
+- If asked something not on the resume, politely redirect to the available information`
+          },
+          {
+            role: "user",
+            content: userMessage
+          }
+        ],
+        max_tokens: 500,
+        temperature: 0.7
+      })
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      console.error("Groq API Error:", error);
+      return "Sorry, I couldn't process your request. Please try again!";
+    }
+
+    const data = await response.json();
+    return data.choices[0].message.content;
+  } catch (error) {
+    console.error("Error calling Groq API:", error);
+    return "Sorry, I'm having trouble connecting to the AI service. Please try again!";
   }
-  
-  // Skills
-  if (message.includes("skill") || message.includes("technical") || message.includes("tools")) {
-    return "My key technical skills include:<br>• <b>Programming:</b> Python, SQL, R<br>• <b>BI Tools:</b> Power BI, Tableau, Excel<br>• <b>Data:</b> ETL, SQL Server, Snowflake<br>• <b>SAP:</b> S/4HANA, ECC, BW/4HANA<br>• <b>Libraries:</b> Pandas, NumPy<br>I'm proficient in data cleaning, analysis, and visualization across multiple platforms.";
-  }
-  
-  // Experience
-  if (message.includes("experience") || message.includes("work exp") || message.includes("work experience")) {
-    return "I have 3+ years of professional experience:<br>• <b>Current (Mar 2025):</b> Data Analyst at Discover Financial Services<br>• <b>2022-2023:</b> Data Analyst at VR Digital Solutions<br>• <b>2021-2022:</b> Data Analyst Intern at VR Digital Solutions<br>In these roles, I've worked with large datasets (2M+ records), built dashboards, and automated reporting to support business decisions.";
-  }
-  
-  // Projects
-  if (message.includes("project")) {
-    return "My key projects include:<br>• <b>Business Performance Analytics Dashboard:</b> Built dashboards using SQL, Power BI, Excel to track operational KPIs and revenue trends<br>• <b>Customer Behavior & Retention Analysis:</b> Analyzed customer behavior using Python and SQL, created Tableau and Power BI dashboards to visualize insights<br>These projects demonstrated my ability to translate data into business value.";
-  }
-  
-  // Education
-  if (message.includes("education") || message.includes("degree")) {
-    return "I'm pursuing a <b>Master of Science in Data Science & Analytics</b> from Florida Atlantic University (graduating 2025). This advanced degree complements my 3+ years of professional experience and deepens my expertise in statistical analysis, machine learning, and advanced analytics.";
-  }
-  
-  // Strengths
-  if (message.includes("strength")) {
-    return "My key strengths are:<br>1. <b>Technical Skills:</b> Proficient in SQL, Python, Power BI, Tableau, and SAP tools<br>2. <b>Analytical Abilities:</b> Strong experience in EDA, data cleaning, and problem-solving<br>3. <b>Business Acumen:</b> Understand how to translate data insights into business value<br>4. <b>Communication:</b> Can present complex findings to stakeholders clearly<br>5. <b>Automation:</b> Excel at automating repetitive reporting tasks";
-  }
-  
-  // Tools
-  if (message.includes("tool")) {
-    return "I'm proficient with these tools:<br>• <b>Data Analysis:</b> SQL, Python, Excel, R<br>• <b>BI & Visualization:</b> Power BI, Tableau, SAP Analytics Cloud<br>• <b>Data Platforms:</b> SQL Server, Snowflake, SAP HANA<br>• <b>ETL:</b> Python Automation, Power Automate<br>• <b>Libraries:</b> Pandas, NumPy<br>These tools help me efficiently process, analyze, and visualize complex datasets.";
-  }
-  
-  // Achievements
-  if (message.includes("achievement")) {
-    return "Key achievements:<br>• Built multiple Power BI and Tableau dashboards that improved decision-making<br>• Automated reporting processes, reducing manual work by hours weekly<br>• Analyzed datasets with 2M+ records to identify key business insights<br>• Worked with financial, operational, and healthcare data successfully<br>• Supporting finance and risk teams at Discover Financial Services";
-  }
-  
-  // Career goals
-  if (message.includes("career goal")) {
-    return "My career goals are:<br>• Become an expert in advanced analytics and business intelligence<br>• Lead data-driven initiatives that directly impact business strategy<br>• Develop machine learning models for predictive analytics<br>• Continue growing my expertise in SQL, Python, and cloud technologies<br>• Help organizations make better decisions through data insights";
-  }
-  
-  // Certifications
-  if (message.includes("certification")) {
-    return "I'm actively pursuing professional development through my MS degree in Data Science & Analytics from Florida Atlantic University. This advanced program covers statistical analysis, machine learning, and advanced analytics techniques to complement my practical experience.";
-  }
-  
-  // Background
-  if (message.includes("background") || message.includes("location")) {
-    return "I'm based in Boca Raton, Florida. I have a strong background in data analysis with 3+ years of professional experience across financial, operational, and healthcare sectors. My journey began as a Data Analyst Intern at VR Digital Solutions, where I developed my skills, and now I'm leveraging that expertise at Discover Financial Services while pursuing my master's degree.";
-  }
-  
-  // Default response
-  return "That's a great question! Based on my resume, I can help you with information about my experience, skills, projects, education, and how I can contribute to your team. Feel free to ask more specific questions!";
 }
 
 async function sendMessage(messageFromButton = null) {
@@ -98,15 +151,32 @@ async function sendMessage(messageFromButton = null) {
     input.value = "";
   }
 
-  // Simulate typing delay - NO API CALL, just local logic
-  setTimeout(() => {
-    const reply = generateResponse(message);
-    addMessage(reply, "bot");
-  }, 500);
+  // Show typing indicator
+  const typingMsg = document.createElement("div");
+  typingMsg.className = "bot-msg";
+  typingMsg.innerHTML = "⏳ Thinking...";
+  typingMsg.id = "typing-indicator";
+  chatBox.appendChild(typingMsg);
+  chatBox.scrollTop = chatBox.scrollHeight;
+
+  // Call Groq AI
+  const reply = await callGroqAI(message);
+  
+  // Remove typing indicator
+  const typingIndicator = document.getElementById("typing-indicator");
+  if (typingIndicator) {
+    typingIndicator.remove();
+  }
+
+  // Add AI response
+  addMessage(reply, "bot");
 }
 
-input.addEventListener("keypress", function(e) {
-  if (e.key === "Enter") {
-    sendMessage();
-  }
-});
+// Add event listener for input
+if (input) {
+  input.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
+}
