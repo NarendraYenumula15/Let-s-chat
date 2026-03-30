@@ -52,7 +52,7 @@ SKILLS
 - Domain Expertise: Financial Analytics, Credit Risk Reporting Support, Regulatory Reporting Support, Healthcare Analytics, Claims Data Processing, Performance Reporting.
 
 EDUCATION
-Master of Science – Data Science & Analytics – Florida Atlantic University –(Fenb 2023 - May 2025);
+Master of Science – Data Science & Analytics – Florida Atlantic University –(Fenb 2023 - May 2025)`;
 
 // Show welcome message when page loads
 function showWelcome() {
