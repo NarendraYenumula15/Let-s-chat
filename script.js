@@ -43,6 +43,9 @@ fact and KPI tables into MySQL via SQLAlchemy, schedules daily automated refresh
 Credit Risk Monitoring Dashboard:
 - Built an end to end solution that generates synthetic banking transaction data with Python (pandas, NumPy, mysql connector), stores and processes it in MySQL using views and window functions for monthly aggregates, rolling averages, and credit utilization based risk segmentation (High > 80 %, Medium 50 79 %, Low < 50 %); validated the risk logic via a Python sanity check script and delivered an interactive Power BI executive dashboard that visualizes real time credit utilization KPIs, risk distribution breakdowns, and spend trend analysis—automating the entire pipeline and enabling rapid detection of high risk customers. (Tech: Python, MySQL, SQL window functions, Power BI)
 
+SAP Financial Reporting & Reconciliation Analysis:
+- Simulated an end to end SAP style GL reconciliation workflow that cleanses and validates GL and transaction datasets (Python pandas), automates balance vs transaction reconciliation and variance calculations with SQL, generates core financial KPIs (Revenue, Expense, Net Profit, Variance %), and delivers an audit ready Power BI dashboard featuring KPI cards, GL vs transaction comparison tables, mismatch detection, and interactive filters—all built to showcase data validation, SQL/Python automation, and BI reporting skills.
+
 SKILLS
 - Data Analysis: SQL (CTEs, joins, window functions), Python (Pandas, NumPy), R, Data Cleaning & Validation, Exploratory Data Analysis (EDA), Statistical Analysis, Data Transformation, Ad‑hoc Reporting.
 - BI & Visualization: Power BI (DAX, data modeling, dashboard design), Tableau, Excel (PivotTables, advanced formulas, charts), SAP Analytics Cloud (SAC), Dashboard Storytelling, KPI Reporting, Data Visualization Best Practices.
