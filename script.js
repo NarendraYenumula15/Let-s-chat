@@ -35,11 +35,13 @@ VR Digital Solutions — Jul 2021 – Dec 2021
 
 PROJECTS
 
-Business Performance Analytics Dashboard
-- Built dashboards using SQL, Power BI, and Excel to track operational KPIs, revenue trends, and performance metrics across business functions. Implemented data modeling and automated refresh workflows. Improved reporting visibility for stakeholders.
+SuperStore – Sales Analysis (Automated ETL & Executive KPI Dashboard) :
+- Designed an end to end pipeline that ingests raw CSV/Excel sales files, cleanses/validates them with Python (Pandas, NumPy), loads
+fact and KPI tables into MySQL via SQLAlchemy, schedules daily automated refreshes (≈30 % less manual prep), and powers an interactive Power BI executive dashboard with KPI cards, trend analyses, product/region/ship mode insights, plus automated PDF/Excel summary reports. (Tech: Python, MySQL, Power BI, ETL automation)
 
-Customer Behavior & Retention Analysis
-- Analyzed customer datasets using Python and SQL to identify behavioral patterns and retention drivers. Developed visualization dashboards in Tableau and Power BI. Supported data‑driven retention strategy discussions.
+
+Credit Risk Monitoring Dashboard:
+- Built an end to end solution that generates synthetic banking transaction data with Python (pandas, NumPy, mysql connector), stores and processes it in MySQL using views and window functions for monthly aggregates, rolling averages, and credit utilization based risk segmentation (High > 80 %, Medium 50 79 %, Low < 50 %); validated the risk logic via a Python sanity check script and delivered an interactive Power BI executive dashboard that visualizes real time credit utilization KPIs, risk distribution breakdowns, and spend trend analysis—automating the entire pipeline and enabling rapid detection of high risk customers. (Tech: Python, MySQL, SQL window functions, Power BI)
 
 SKILLS
 - Data Analysis: SQL (CTEs, joins, window functions), Python (Pandas, NumPy), R, Data Cleaning & Validation, Exploratory Data Analysis (EDA), Statistical Analysis, Data Transformation, Ad‑hoc Reporting.
@@ -50,7 +52,7 @@ SKILLS
 - Domain Expertise: Financial Analytics, Credit Risk Reporting Support, Regulatory Reporting Support, Healthcare Analytics, Claims Data Processing, Performance Reporting.
 
 EDUCATION
-Master of Science – Data Science & Analytics – Florida Atlantic University – May 2025`;
+Master of Science – Data Science & Analytics – Florida Atlantic University –(Fenb 2023 - May 2025);
 
 // Show welcome message when page loads
 function showWelcome() {
