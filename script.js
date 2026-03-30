@@ -2,54 +2,55 @@ const chatBox = document.getElementById("chat-box");
 const input = document.getElementById("user-input");
 
 // Resume data embedded
-const RESUME_DATA = `Name: Narendra Yenumula
-Title: Data Analyst | BI | SQL | Financial Analytics
-Location: Boca Raton, Florida
+const RESUME_DATA = `NARENDRA YENUMULA
+Data Analyst | BI | SQL | Financial Analytics
+Boca Raton, FL | +1 (954) 501-1832 | narendra.nani936@gmail.com | https://www.linkedin.com/in/narendrayenumula15/ | https://vocal-banoffee-ef2635.netlify.app/
 
-SUMMARY
-Data Analyst with 3+ years of experience working with financial, operational, and healthcare datasets using SQL, Python, Power BI, Tableau, and SAP (S/4HANA, ECC, BW/4HANA).
+PROFESSIONAL SUMMARY
+Data Analyst with 3+ years of experience delivering insights across financial, operational, and healthcare datasets using SQL, Python, Power BI, Tableau, and SAP (S/4HANA, ECC, BW/4HANA). Experienced in data modeling, enterprise data integration, working with data warehouse environments, automating reporting workflows, and building dashboards that support credit risk, regulatory reporting, and performance tracking. Known for improving reporting consistency, strengthening data validation, and translating complex datasets into actionable business insights.
 
-EXPERIENCE
+PROFESSIONAL EXPERIENCE
 
-Discover Financial Services (Mar 2025 – Present)
-Role: Data Analyst
-- Work with large transactional datasets using SQL and Python
-- Build Power BI dashboards for credit performance and spending trends
-- Extract data from SAP S/4HANA and SAP ECC
-- Automate reporting using Python and Power Automate
-- Support finance and risk teams
+Data Analyst
+Discover Financial Services — Mar 2025 – Present
+- Work with large transactional datasets spanning millions of records using SQL and Python to support credit risk and operational reporting. Perform data extraction, transformation, and validation across enterprise data sources. Deliver reliable datasets used by finance and risk teams for ongoing analysis.
+- Design and maintain Power BI dashboards tracking credit performance, spending trends, and compliance indicators across reporting cycles. Build DAX measures and data models aligned with stakeholder requirements. Ensure dashboards support regular business reviews and decision‑making.
+- Extract and reconcile data from SAP S/4HANA and SAP ECC supporting financial close, regulatory reporting, and audit requests. Validate data accuracy, resolve data inconsistencies, and document reporting logic. Improve reporting transparency across teams.
+- Automate recurring reporting workflows using Python and Power Automate, reducing manual effort (~30%) and improving report delivery timelines. Standardize data preparation steps across commonly used datasets. Strengthen reporting reliability across teams.
+- Partner with finance, risk, and compliance stakeholders supporting recurring reports and ad‑hoc analysis each month. Implement data validation checks that improve data quality and reduce reporting discrepancies. Maintain reusable SQL logic that improves report consistency.
 
-VR Digital Solutions (Jan 2022 – Jul 2023)
-Role: Data Analyst
-- Analyze datasets up to 2M records using SQL, Excel, Python
-- Build dashboards in Power BI and Tableau
-- Perform marketing and operational analytics
-- Automate reporting with Python and Excel macros
+Data Analyst
+VR Digital Solutions — Jan 2022 – Jul 2023
+- Analyse datasets ranging from 100K–2M records using SQL, Excel, and Python to support marketing analytics, operational reporting, and client performance tracking. Perform data cleaning, validation, and transformation. Deliver datasets used in recurring client reporting.
+- Develop 4–5 Power BI and Tableau dashboards visualizing KPIs, campaign performance, and operational trends for internal teams and clients. Translate business requirements into clear visualizations. Enable stakeholders to monitor performance and adjust strategies based on insights.
+- Conduct ad‑hoc analysis across multiple campaigns to identify growth opportunities, customer engagement patterns, and performance gaps. Provide actionable insights that supported campaign optimization decisions. Help teams prioritize improvements based on data trends.
+- Collaborate with developers and business stakeholders across multiple projects to gather reporting requirements and refine data models. Participate in discussions around data structure and reporting logic. Deliver dashboards aligned with business objectives.
+- Automate recurring reporting tasks using Excel macros and Python scripts, reducing manual reporting effort (~25%) and improving reporting consistency. Help teams access updated data more efficiently. Improve report turnaround across projects.
 
-VR Digital Solutions (Jul 2021 – Dec 2021)
-Role: Data Analyst Intern
-- Data cleaning and preprocessing
-- Build dashboards in Power BI
-- Perform exploratory data analysis
+Data Analyst Intern
+VR Digital Solutions — Jul 2021 – Dec 2021
+- Assist senior analysts with data collection, data cleaning, and data preprocessing across datasets used in analytics projects. Prepare datasets using Excel, SQL, and Python for reporting workflows. Support multiple reporting initiatives simultaneously.
+- Create 2–3 dashboards in Power BI and Excel to track business metrics and project performance indicators. Help maintain reporting templates and documentation. Support teams during weekly reporting cycles.
+- Perform exploratory data analysis (EDA) to identify trends, patterns, and data issues used in internal presentations. Document observations and data anomalies. Support analysts in preparing stakeholder insights.
 
 PROJECTS
 
 Business Performance Analytics Dashboard
-- Built dashboards using SQL, Power BI, Excel
-- Track operational KPIs and revenue trends
+- Built dashboards using SQL, Power BI, and Excel to track operational KPIs, revenue trends, and performance metrics across business functions. Implemented data modeling and automated refresh workflows. Improved reporting visibility for stakeholders.
 
 Customer Behavior & Retention Analysis
-- Analyzed customer behavior using Python and SQL
-- Created Tableau and Power BI dashboards
+- Analyzed customer datasets using Python and SQL to identify behavioral patterns and retention drivers. Developed visualization dashboards in Tableau and Power BI. Supported data‑driven retention strategy discussions.
 
 SKILLS
+- Data Analysis: SQL (CTEs, joins, window functions), Python (Pandas, NumPy), R, Data Cleaning & Validation, Exploratory Data Analysis (EDA), Statistical Analysis, Data Transformation, Ad‑hoc Reporting.
+- BI & Visualization: Power BI (DAX, data modeling, dashboard design), Tableau, Excel (PivotTables, advanced formulas, charts), SAP Analytics Cloud (SAC), Dashboard Storytelling, KPI Reporting, Data Visualization Best Practices.
+- SAP & Enterprise Data: SAP S/4HANA, SAP ECC, SAP BW/4HANA, SAP HANA, SAP BusinessObjects (Web Intelligence, Crystal Reports), SAP Data Extraction, Financial & Operational Reporting from SAP.
+- Data Engineering & Automation: ETL Workflow Development, Data Integration, Python Automation Scripts, Power Automate, Snowflake, SQL Server, Data Pipeline Support, Scheduled Reporting Automation.
+- Analytics & Modeling: KPI Development, Predictive Modeling (basic), Customer Segmentation, Churn Analysis, Trend Analysis, Performance Analysis, Business Metrics Tracking.
+- Domain Expertise: Financial Analytics, Credit Risk Reporting Support, Regulatory Reporting Support, Healthcare Analytics, Claims Data Processing, Performance Reporting.
 
-Data Analysis: SQL, Python, Pandas, NumPy, R, EDA
-BI & Visualization: Power BI, Tableau, Excel, SAP Analytics Cloud
-SAP: SAP S/4HANA, SAP ECC, SAP BW/4HANA, SAP HANA
-Data Engineering: ETL, Snowflake, SQL Server, Python Automation
-
-Education: MS Data Science & Analytics, Florida Atlantic University (2025)`;
+EDUCATION
+Master of Science – Data Science & Analytics – Florida Atlantic University – May 2025`;
 
 // Show welcome message when page loads
 function showWelcome() {
