@@ -3,60 +3,56 @@ const input = document.getElementById("user-input");
 
 // Resume data embedded
 const RESUME_DATA = `NARENDRA YENUMULA
-Data Analyst | BI | SQL | Financial Analytics
-Boca Raton, FL | +1 (954) 501-1832 | narendra.nani936@gmail.com | https://www.linkedin.com/in/narendrayenumula15/ | https://vocal-banoffee-ef2635.netlify.app/
+Senior Data Engineer | AI/ML Pipelines | Python | SQL | Snowflake | Cloud
+Boca Raton, FL | +1 (561) 859-6887 | yenumulanarendra321@gmail.com | LinkedIn | Portfolio
 
 PROFESSIONAL SUMMARY
-Data Analyst with 3+ years of experience delivering insights across financial, operational, and healthcare datasets using SQL, Python, Power BI, Tableau, and SAP (S/4HANA, ECC, BW/4HANA). Experienced in data modeling, enterprise data integration, working with data warehouse environments, automating reporting workflows, and building dashboards that support credit risk, regulatory reporting, and performance tracking. Known for improving reporting consistency, strengthening data validation, and translating complex datasets into actionable business insights.
+Data Engineer with 4+ years of experience building scalable data pipelines and AI/ML-ready data systems. Expert in Python, SQL, and Snowflake with strong experience in feature engineering, data preprocessing, and predictive analytics support. Proven ability to improve data quality, optimize performance, and automate workflows, enabling data-driven and AI-powered decision-making.
 
 PROFESSIONAL EXPERIENCE
 
-Data Analyst
-Discover Financial Services — Mar 2025 – Present
-- Work with large transactional datasets spanning millions of records using SQL and Python to support credit risk and operational reporting. Perform data extraction, transformation, and validation across enterprise data sources. Deliver reliable datasets used by finance and risk teams for ongoing analysis.
-- Design and maintain Power BI dashboards tracking credit performance, spending trends, and compliance indicators across reporting cycles. Build DAX measures and data models aligned with stakeholder requirements. Ensure dashboards support regular business reviews and decision‑making.
-- Extract and reconcile data from SAP S/4HANA and SAP ECC supporting financial close, regulatory reporting, and audit requests. Validate data accuracy, resolve data inconsistencies, and document reporting logic. Improve reporting transparency across teams.
-- Automate recurring reporting workflows using Python and Power Automate, reducing manual effort (~30%) and improving report delivery timelines. Standardize data preparation steps across commonly used datasets. Strengthen reporting reliability across teams.
-- Partner with finance, risk, and compliance stakeholders supporting recurring reports and ad‑hoc analysis each month. Implement data validation checks that improve data quality and reduce reporting discrepancies. Maintain reusable SQL logic that improves report consistency.
+Senior Data Engineer
+Discover Financial Services — Mar 2024 – Present
+- Built scalable ETL pipelines processing 5M+ records/month using Python and SQL, enabling ML-driven risk analytics and improving prediction accuracy.
+- Designed feature engineering pipelines to transform raw financial data into model-ready datasets, improving model performance and reducing training time.
+- Implemented automated data validation and anomaly detection frameworks, increasing data reliability by 25% and ensuring consistency across analytics and ML systems.
+- Optimized complex SQL queries and large-scale transformations in Snowflake, reducing execution time by 35% and improving reporting performance.
+- Automated end-to-end data workflows using Python and orchestration tools, reducing manual effort by 30% and improving pipeline scalability and stability.
 
-Data Analyst
-VR Digital Solutions — Jan 2022 – Jul 2023
-- Analyse datasets ranging from 100K–2M records using SQL, Excel, and Python to support marketing analytics, operational reporting, and client performance tracking. Perform data cleaning, validation, and transformation. Deliver datasets used in recurring client reporting.
-- Develop 4–5 Power BI and Tableau dashboards visualizing KPIs, campaign performance, and operational trends for internal teams and clients. Translate business requirements into clear visualizations. Enable stakeholders to monitor performance and adjust strategies based on insights.
-- Conduct ad‑hoc analysis across multiple campaigns to identify growth opportunities, customer engagement patterns, and performance gaps. Provide actionable insights that supported campaign optimization decisions. Help teams prioritize improvements based on data trends.
-- Collaborate with developers and business stakeholders across multiple projects to gather reporting requirements and refine data models. Participate in discussions around data structure and reporting logic. Deliver dashboards aligned with business objectives.
-- Automate recurring reporting tasks using Excel macros and Python scripts, reducing manual reporting effort (~25%) and improving reporting consistency. Help teams access updated data more efficiently. Improve report turnaround across projects.
+Data Engineer
+Hexaware Technologies — Jan 2022 – Feb 2024
+- Developed ETL pipelines processing 100K–2M records using Python and SQL, supporting ML use cases such as customer segmentation and churn prediction.
+- Built data preprocessing and feature extraction pipelines using Python (Pandas, NumPy), improving data quality and enabling structured inputs for machine learning models.
+- Designed optimized SQL queries and data models for reporting systems, improving performance by 25% and reducing dashboard latency.
+- Automated KPI aggregation and reporting workflows using Python and SQL, reducing manual effort by 25% and improving reporting consistency.
+- Integrated multiple data sources into centralized warehouse systems, reducing discrepancies by 18% and enabling unified analytics.
 
-Data Analyst Intern
-VR Digital Solutions — Jul 2021 – Dec 2021
-- Assist senior analysts with data collection, data cleaning, and data preprocessing across datasets used in analytics projects. Prepare datasets using Excel, SQL, and Python for reporting workflows. Support multiple reporting initiatives simultaneously.
-- Create 2–3 dashboards in Power BI and Excel to track business metrics and project performance indicators. Help maintain reporting templates and documentation. Support teams during weekly reporting cycles.
-- Perform exploratory data analysis (EDA) to identify trends, patterns, and data issues used in internal presentations. Document observations and data anomalies. Support analysts in preparing stakeholder insights.
+Data Engineer Intern
+VR Digital Solutions — Jan 2021 – Dec 2021
+- Assisted in building ETL pipelines and data ingestion workflows using Python and SQL, improving data availability for analytics and ML use cases.
+- Performed data cleaning, validation, and anomaly detection across datasets, improving reporting accuracy by 15%.
+- Automated repetitive data processing tasks using Python scripts, improving workflow efficiency and reducing processing time.
 
 PROJECTS
 
-SuperStore – Sales Analysis (Automated ETL & Executive KPI Dashboard) :
-- Designed an end to end pipeline that ingests raw CSV/Excel sales files, cleanses/validates them with Python (Pandas, NumPy), loads
-fact and KPI tables into MySQL via SQLAlchemy, schedules daily automated refreshes (≈30 % less manual prep), and powers an interactive Power BI executive dashboard with KPI cards, trend analyses, product/region/ship mode insights, plus automated PDF/Excel summary reports. (Tech: Python, MySQL, Power BI, ETL automation)
-
+SuperStore – Sales Analysis (Automated ETL & Executive KPI Dashboard):
+- Built an automated ETL pipeline using Python and MySQL to clean, process, and load sales data, reducing manual effort by ~30%.
+- Developed an interactive Power BI dashboard with KPI tracking, trend analysis, and automated reporting.
 
 Credit Risk Monitoring Dashboard:
-- Built an end to end solution that generates synthetic banking transaction data with Python (pandas, NumPy, mysql connector), stores and processes it in MySQL using views and window functions for monthly aggregates, rolling averages, and credit utilization based risk segmentation (High > 80 %, Medium 50 79 %, Low < 50 %); validated the risk logic via a Python sanity check script and delivered an interactive Power BI executive dashboard that visualizes real time credit utilization KPIs, risk distribution breakdowns, and spend trend analysis—automating the entire pipeline and enabling rapid detection of high risk customers. (Tech: Python, MySQL, SQL window functions, Power BI)
-
-SAP Financial Reporting & Reconciliation Analysis:
-- Simulated an end to end SAP style GL reconciliation workflow that cleanses and validates GL and transaction datasets (Python pandas), automates balance vs transaction reconciliation and variance calculations with SQL, generates core financial KPIs (Revenue, Expense, Net Profit, Variance %), and delivers an audit ready Power BI dashboard featuring KPI cards, GL vs transaction comparison tables, mismatch detection, and interactive filters—all built to showcase data validation, SQL/Python automation, and BI reporting skills.
+- Created an end-to-end system to generate, process, and analyze banking data using Python and MySQL for credit risk segmentation.
+- Designed a Power BI dashboard to monitor real-time KPIs, risk distribution, and spending trends for proactive risk detection.
 
 SKILLS
-- Data Analysis: SQL (CTEs, joins, window functions), Python (Pandas, NumPy), R, Data Cleaning & Validation, Exploratory Data Analysis (EDA), Statistical Analysis, Data Transformation, Ad‑hoc Reporting.
-- BI & Visualization: Power BI (DAX, data modeling, dashboard design), Tableau, Excel (PivotTables, advanced formulas, charts), SAP Analytics Cloud (SAC), Dashboard Storytelling, KPI Reporting, Data Visualization Best Practices.
-- SAP & Enterprise Data: SAP S/4HANA, SAP ECC, SAP BW/4HANA, SAP HANA, SAP BusinessObjects (Web Intelligence, Crystal Reports), SAP Data Extraction, Financial & Operational Reporting from SAP.
-- Data Engineering & Automation: ETL Workflow Development, Data Integration, Python Automation Scripts, Power Automate, Snowflake, SQL Server, Data Pipeline Support, Scheduled Reporting Automation.
-- Analytics & Modeling: KPI Development, Predictive Modeling (basic), Customer Segmentation, Churn Analysis, Trend Analysis, Performance Analysis, Business Metrics Tracking.
-- Domain Expertise: Financial Analytics, Credit Risk Reporting Support, Regulatory Reporting Support, Healthcare Analytics, Claims Data Processing, Performance Reporting.
+- Data Engineering: ETL/ELT Pipelines, Data Warehousing, Data Modeling, Data Lakes, Data Integration, Data Governance.
+- Programming: Python (Pandas, NumPy, Scikit-learn), SQL (Advanced Optimization, Window Functions).
+- Big Data: Apache Spark (PySpark), Distributed Processing, Batch Processing.
+- AI/ML: Feature Engineering, Data Preprocessing, ML Pipelines, Predictive Analytics, Anomaly Detection.
+- Cloud & Tools: Snowflake, AWS (S3, Glue, Lambda), Airflow, Databricks (Exposure).
+- Visualization: Power BI, Tableau, Excel.
 
 EDUCATION
-Master of Science – Data Science & Analytics – Florida Atlantic University –(Fenb 2023 - May 2025)`;
-
+Master of Science – Data Science & Analytics – Florida Atlantic University – May 2025`;
 // Show welcome message when page loads
 function showWelcome() {
   if (chatBox && chatBox.children.length === 0) {
