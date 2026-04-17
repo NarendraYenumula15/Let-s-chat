@@ -1,1 +1,1 @@
-const GROQ_API_KEY = "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";
+const GROQ_API_KEY = "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";
